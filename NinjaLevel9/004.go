@@ -12,7 +12,7 @@ var mut sync.Mutex
 
 func main() {
 	fmt.Println("CPU count Start: \t", runtime.NumCPU())
-	fmt.Println("GoRoutines count Start: \t",runtime.NumGoroutine())
+	fmt.Println("GoRoutines count Start: \t", runtime.NumGoroutine())
 
 	var gr = 30
 	waits.Add(gr)
@@ -22,17 +22,15 @@ func main() {
 	}
 	waits.Wait()
 
-	fmt.Println("GoRoutines count END: \t",runtime.NumGoroutine())
+	fmt.Println("GoRoutines count END: \t", runtime.NumGoroutine())
 
 }
 
-
-
-func foo2()  {
-		mut.Lock()
-		val := counts
-		val++
-		counts = val
-		fmt.Println("Value of Count: \t",counts)
-		mut.Unlock()
-	}
+func foo2() {
+	mut.Lock()
+	val := counts
+	val++
+	counts = val
+	fmt.Println("Value of Count: \t", counts)
+	mut.Unlock()
+}

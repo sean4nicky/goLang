@@ -3,7 +3,16 @@ package main
 import (
 	"fmt"
 	)
-
+/*
+Using the following operators, write expressions and assign their values to variables:
+==
+<=
+>=
+!=
+<
+>
+Now print each of the variables.
+*/
 func main (){
 	g := 10 == 10
 	h := 10 <= 11

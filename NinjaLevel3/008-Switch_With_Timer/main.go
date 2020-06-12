@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"time"
 )
-
+/*
+Create a program that uses a switch statement with no switch expression specified
+ */
 func main()  {
 	timer1 := time.NewTimer(time.Second * 5)
 	timer2 := time.NewTimer(time.Second * 10)

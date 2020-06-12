@@ -1,7 +1,9 @@
 package main
 
 import "fmt"
-
+/*
+Create a variable of type string using a raw string literal. Print it.
+*/
 func main() {
 	fmt.Println("this is a string")
 	foo := `this is a example of a

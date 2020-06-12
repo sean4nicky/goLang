@@ -11,7 +11,7 @@ var wait sync.WaitGroup
 
 func main() {
 	fmt.Println("CPU count Start: \t", runtime.NumCPU())
-	fmt.Println("GoRoutines count Start: \t",runtime.NumGoroutine())
+	fmt.Println("GoRoutines count Start: \t", runtime.NumGoroutine())
 
 	var gr = 30
 	wait.Add(gr)
@@ -20,16 +20,14 @@ func main() {
 		wait.Done()
 	}
 	wait.Wait()
-	fmt.Println("GoRoutines count END: \t",runtime.NumGoroutine())
+	fmt.Println("GoRoutines count END: \t", runtime.NumGoroutine())
 
 }
 
-
-
-func foo()  {
-		val := count
-		runtime.Gosched()
-		val++
-		count = val
-		fmt.Println("Value of Count: \t",count)
-	}
+func foo() {
+	val := count
+	runtime.Gosched()
+	val++
+	count = val
+	fmt.Println("Value of Count: \t", count)
+}

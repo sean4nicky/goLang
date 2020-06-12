@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 )
-
+/*
+Create TYPED and UNTYPED constants. Print the values of the constants.
+*/
 const (
 	foo = true
 	bar bool = false
