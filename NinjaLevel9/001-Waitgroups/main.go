@@ -5,12 +5,13 @@ import (
 	"runtime"
 	"sync"
 )
-
+/*
+in addition to the main goroutine, launch two additional goroutines
+each additional goroutine should print something out
+use waitgroups to make sure each goroutine finishes before your program exists
+*/
 var counter int
 var wg sync.WaitGroup
-var mutex = sync.Mutex{}
-
-//var mutex2 = sync.Mutex{}
 
 func main() {
 	fmt.Println("CPU count Start: \t", runtime.NumCPU())
@@ -28,27 +29,13 @@ func main() {
 
 }
 
-func boo() int {
-	i := 0
-	for i = 0; i < 10; i++ {
-		mutex.Lock()
-		counter++
+func boo() {
 		fmt.Println("count of boo: \t", counter)
-		mutex.Unlock()
+		wg.Done()
 	}
-	wg.Done()
-	return counter
-}
 
-func bar() int {
-	//time.Sleep(time.Nanosecond *1)
-	i := 0
-	for i = 0; i < 10; i++ {
-		mutex.Lock()
-		counter += 2
-		fmt.Println("count of bar: \t", counter)
-		mutex.Unlock()
-	}
+
+func bar() {
+	fmt.Println("count of bar: \t", counter)
 	wg.Done()
-	return counter
-}
+	}

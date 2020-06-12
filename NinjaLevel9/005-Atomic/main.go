@@ -4,30 +4,32 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"sync/atomic"
 )
-
-var count int
-var wait sync.WaitGroup
+/*
+Fix the race condition you created in exercise #4 by using package atomic
+*/
+var coun int64
+var wai sync.WaitGroup
 
 func main() {
 	fmt.Println("CPU count Start: \t", runtime.NumCPU())
 	fmt.Println("GoRoutines count Start: \t", runtime.NumGoroutine())
 
 	var gr = 30
-	wait.Add(gr)
+	wai.Add(gr)
+
 	for i := 0; i < gr; i++ {
-		go foo()
-		wait.Done()
+		go foo3()
+		wai.Done()
 	}
-	wait.Wait()
+	wai.Wait()
+
 	fmt.Println("GoRoutines count END: \t", runtime.NumGoroutine())
 
 }
 
-func foo() {
-	val := count
-	runtime.Gosched()
-	val++
-	count = val
-	fmt.Println("Value of Count: \t", count)
+func foo3() {
+	atomic.AddInt64(&coun, 1)
+	fmt.Println("Value of Count: \t", atomic.LoadInt64(&coun))
 }

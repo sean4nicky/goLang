@@ -5,7 +5,10 @@ import (
 	"runtime"
 	"sync"
 )
-
+/*
+Fix the race condition you created in the previous exercise by using a mutex
+it makes sense to remove runtime.Gosched()
+*/
 var counts int
 var waits sync.WaitGroup
 var mut sync.Mutex
