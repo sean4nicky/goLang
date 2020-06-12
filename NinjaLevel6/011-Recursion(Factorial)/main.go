@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+// recursion example of factorial
 func main() {
 	j := fac(5)
 	fmt.Print(j)
