@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"sort"
 )
-
+/*
+Starting with this code, sort the []int and []string for each person.
+*/
 
 
 func main() {

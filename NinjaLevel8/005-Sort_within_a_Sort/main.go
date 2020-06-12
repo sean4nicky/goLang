@@ -4,7 +4,12 @@ import (
 	"fmt"
 	"sort"
 )
-
+/*
+Starting with this code, sort the []user by
+age, last
+Also sort each []string “Sayings” for each user
+print everything in a way that is pleasant
+*/
 type suser struct {
 	First   string
 	Last    string

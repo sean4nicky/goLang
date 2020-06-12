@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 )
-
+/*
+Starting with this code, unmarshal the JSON into a Go data structure. Hint: https://mholt.github.io/json-to-go/
+*/
 type person struct {
 	First   string   `json:"First"`
 	Last    string   `json:"Last"`
