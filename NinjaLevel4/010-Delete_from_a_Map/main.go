@@ -1,7 +1,9 @@
 package main
 
 import "fmt"
-
+/*
+Using the code from the previous example, delete a record from your map. No print the map out using the “range” loop
+*/
 func main() {
 	m := map[string]string{
 		"James Bond":      "Shaken, not stirred, Martinis, Women",
@@ -12,7 +14,16 @@ func main() {
 
 	m["Q"] = "Computers, Guns, Secrets"
 
+	fmt.Println(m)
+
 	for i, v := range m {
-		fmt.Printf("%v\t\t\t%v\n", i, v)
+		fmt.Printf("%v\t\t%v\n", i, v)
+	}
+	delete(m, "Moneypenny Miss")
+
+	fmt.Println(m)
+
+	for i, v := range m {
+		fmt.Printf("%v\t\t%v\n", i, v)
 	}
 }
